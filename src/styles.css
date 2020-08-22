@@ -1,1 +1,189 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Ustalenie właściwości "box-sizing" dla wszystkich elementów */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400;500&display=swap');
+/* Ustalenie właściwości "box-sizing" dla wszystkich elementów */
+* {
+  box-sizing: border-box;  /*popularne to dodajemy zeby trzymalo sie sztywno podanej wys i szer; bez tego doda do wielkosci jeszcze padding-powiekszy nam */
+
+}
+/* Właściwości dla body */
+body {
+ 
+  height: 100vh; /* 100% wysokosci przegladarki*/
+  font-family: 'Baloo Tamma 2', cursive;
+  font-size: 20px;
+  margin: 0;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+
+  
+  
+  /* Klasa kontenera, która ma ograniczoną szerokość i wyśrodkowuje content */
+  /* Ustawienie lewego i prawego marginesu na "auto" wyśrodkowuje kontener */
+  .container {
+    margin: 0 auto ;  /* auto-automatycznie dobierze marines z lewej i prawej strony*/
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+  }
+
+  /* Linki */
+a {
+  color: #777777;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+a:hover {
+  color: #e74c3c;
+}
+
+
+/* Nagłówki */
+h2 {
+  text-transform: uppercase;
+  font-weight: 400;
+  border-bottom: 2px solid black;
+}
+  
+  /* Tabele */
+  table {
+    width: 100%;  /* czyli zajma 100% kontenera*/
+  }
+  table th,
+  table td {
+    padding: 10px;
+    text-align: center;
+  
+  }
+  /* Cieniujemy co drugi (parzysty) wiersz tabeli */
+  /* Używamy tbody, aby upewnić się, że nie cieniujemy nagłówka - to zachowuje kolejność cieniowania */
+  table tbody > tr:nth-child(odd) {  /* odd-co parzysty element; even- co nieparzysty element*/
+    background: #eeeeee;
+     }
+   table tbody > tr:nth-child(even) {  /* odd-co parzysty element; even- co nieparzysty element*/
+    background: white;
+   }
+  
+  /* Przyciski */
+  .button {
+    display: inline-block; /* przyciski beda mogly obok siebie sie znajdowac */
+    margin: 2px;
+    padding: 15.5px 25px 12.5px 25px;  /* słuzy do wyrowniania */
+    border: 0;   /* zadnego obramowania*/
+    border-radius:0;
+    background: #999999;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: inherit;
+    font-weight: inherit;
+    line-height: 26px;  /*zmiana wysokosci 1 linijki tekstu */
+    cursor: pointer;
+    transition: all 0.5s;
+    
+  }
+  /* Przycisk po najechaniu kursorem */ /* przyciski beda ciemnialy jak dluzej przyciemniamy*/
+  .button:hover {
+    background: #888888;
+    color: black;
+    
+
+  }
+  /* Przycisk w stanie aktywnym */
+  .button:active,
+  .button:focus {
+    background: #777777;
+  }
+  
+  /* Przycisk w kolorze zielonym */
+  .button-green {
+    background: #33cc55;
+  }
+  .button-green:hover {
+    background: #80838d;
+  }
+  .button-green:active,
+  .button-green:focus {
+    background: #80838d;
+  }
+  
+  /* Przycisk w kolorze czerwonym */
+  .button-red {
+    background: #e74c3c;
+  }
+  .button-red:hover {
+    background: #80838d;
+  }
+  .button-red:active,
+  .button-red:focus {
+    background: #80838d;
+  }
+
+  
+  /* Formularze */
+input {
+  display:flex;
+  height: 44px;
+  border: 1px solid #cecece;
+  border-radius: 0;
+  font-size: 16px;
+  color: #52545a;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+input:active,
+input:focus {
+  border: 1px solid #80838d;
+  outline: 0;
+}
+
+
+/* Header */
+header {
+  padding-top: 20px;
+  padding-bottom: 15px;
+  background: #e74c3c;
+  color: #ffffff;
+  text-align: center;
+}
+header h1 {
+  margin: 0;
+}
+
+main {
+  flex-grow:1;
+  flex-shrink: 0; /* nie pozwala kurczyc sie*/
+  flex-basis: auto;
+}
+
+/* Footer */
+footer {
+  background: #262930;
+  color: #bab9b9;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  text-align:center;
+  
+}
+
+
+  
+  /* Media Query dla urządzeń o minimalnej szerokości 992px */
+  /* czyli dla komputerów stacjonarnych */
+  @media (min-width: 992px) {  /* media to jest taka instrukcja warunkowa - wys, szer, ale tez parametry urzadzenia*/
+    .container {
+      max-width: 80%;
+    }
+    .button {
+      color: black;   /* zmiany koloru napisow przyciskow przy rozszerzaniu i zawezaniu strony*/
+    }
+  }

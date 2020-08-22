@@ -1,0 +1,19 @@
+.new-student {
+    margin-bottom: 25px;
+  }
+
+  label {
+    margin-right: 10px;
+  }
+  label[for="email"],
+  button{
+    margin-top: 10px;
+    /*margin-left: 17px;*/
+}
+label[for = "username"]{
+   /* margin-left: 22px; */
+    margin-top: 10px;
+}
+input{
+    margin-top: 10px;
+}

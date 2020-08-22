@@ -1,0 +1,46 @@
+
+    <section>
+       
+        <table>
+          <thead>
+            <tr>
+              <th> L.P.</th>
+              <th>IMIĘ I NAZWISKO</th>
+              <th>E-MAIL</th>
+              <th>UŻYTKOWNIK</th>
+              <th>AKCJE  </th>
+            
+              
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let student of students">
+              <td>{{student.id}}</td>
+              <td>{{student.name}}</td>
+              <td>
+                <a href="mailto:{{student.email}}">{{student.email}}</a>
+              </td>
+              <td>{{student.username}}</td>
+              <td>
+                <a routerLink="/edit/{{student.id}}" class="button button-green">Edytuj</a>
+                <button class="button button-red" (click)="delete(student)">Usuń</button>
+              </td>
+          
+            </tr>
+          </tbody>
+        </table>
+        <div class="new-student">
+          <h2>Dodaj nowego studenta</h2>
+          <label for="name">Imię i nazwisko:</label>
+          <input type="text" id="name" #name>
+        
+          <label for="email"> e-mail:</label>
+          <input type="email" id="email" #email>
+
+          <label for="username">Użytkownik:</label>
+          <input type="text" id="name" #username>
+        
+          <button class="button button-green" (click)="add(name.value, email.value, username.value); name.value=''; email.value=''; username.value=''">Dodaj</button>
+        </div>
+      </section>
+
